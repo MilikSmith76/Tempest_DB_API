@@ -4,8 +4,8 @@ var router = express.Router();
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  var email = req.body['email'];
-  var password = req.body['password'];
+  var email = req.query['email'];
+  var password = req.query['password'];
   database.GetUser(email, password).then(
     function(result) {
       res.send(result);
